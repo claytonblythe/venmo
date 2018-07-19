@@ -38,8 +38,7 @@ def insert_vens(vens, cursor):
     """Insert or replace transactions denoted by payment_id into database where payment_id is the primary unique key"""
     while vens:
         try:
-            ven = vens.pop()
-            d = dict(ven)
+            d = dict(vens.pop())
             payment_id, actor, created_time = d['payment_id'], d['actor'], d['created_time']
             message, comments = d['message'], d['comments']
             mentions, permalink, story_id = d['mentions'], d['permalink'], d['story_id']
